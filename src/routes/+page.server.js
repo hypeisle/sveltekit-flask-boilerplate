@@ -1,7 +1,6 @@
-import type { PageServerLoad } from './$types';
-import type { Actions } from '@sveltejs/kit';
+import { Actions } from '@sveltejs/kit';
 
-export const load: PageServerLoad = async ({ fetch, cookies }) => {
+export const load = async ({ fetch, cookies }) => {
 	const response = await fetch('/api/');
 	return {
 		response: await response.json(),
@@ -9,7 +8,7 @@ export const load: PageServerLoad = async ({ fetch, cookies }) => {
 	};
 };
 
-export const actions: Actions = {
+export const actions = {
 	time: async ({ fetch, cookies }) => {
 		const response = await fetch('/api/main/time');
 		const result = await response.json();
