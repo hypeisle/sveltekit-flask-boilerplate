@@ -2,7 +2,7 @@
 	"name": "sveltekit-flask",
 	"version": "0.0.1",
 	"scripts": {
-		"flask-dev": "pipenv install --dev && python -m flask --app api/wsgi run -p 3000",
+		"flask-dev": "venv\\Scripts\\activate && python -m flask --app api/wsgi run -p 3000",
 		"sveltekit-dev": "vite dev --port 3001",
 		"dev": "concurrently \"pnpm run sveltekit-dev\" \"pnpm run flask-dev\"",
 		"build": "vite build",
